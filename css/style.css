@@ -768,4 +768,9 @@ header {
     body {
         padding-bottom: 70px;
     }
+
+    /* 聯絡我們區塊 - 手機版單欄 */
+    #contact > .container > div {
+        grid-template-columns: 1fr !important;
+    }
 }
