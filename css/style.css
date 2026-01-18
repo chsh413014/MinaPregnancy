@@ -1,0 +1,771 @@
+/* ============================================
+   1. 核心變數與基礎設定
+   ============================================ */
+:root {
+    --primary-purple: #9686b8;  /* 柔和紫羅蘭 */
+    --dark-purple: #6a5a8a;      /* 深紫色 */
+    --accent-gold: #c5a065;      /* 香檳金 */
+    --bg-cream: #fdfbf7;         /* 暖米白 */
+    --text-charcoal: #333333;    /* 深炭灰 */
+    --white: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+    background-color: var(--bg-cream);
+    color: var(--text-charcoal);
+    line-height: 1.6;
+    overflow-x: hidden;
+    padding-top: 70px;
+}
+
+h1, h2, h3, h4, .serif {
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 600;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ============================================
+   2. 通用元件
+   ============================================ */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-gold {
+    color: var(--accent-gold);
+}
+
+.text-purple {
+    color: var(--primary-purple);
+}
+
+.text-muted {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* 按鈕樣式 */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    position: relative;
+    transition: 0.3s;
+}
+
+.btn-gold {
+    background-color: var(--accent-gold);
+    color: var(--white);
+    border: 1px solid var(--accent-gold);
+}
+
+.btn-gold:hover {
+    background-color: var(--dark-purple);
+    border-color: var(--dark-purple);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    border: 1px solid var(--accent-gold);
+    color: var(--accent-gold);
+    background: transparent;
+}
+
+.btn-outline:hover {
+    background-color: var(--accent-gold);
+    color: var(--white);
+}
+
+/* ============================================
+   3. Header 導航列
+   ============================================ */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(253, 251, 247, 0.98);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+    padding: 15px 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo 文字設計 */
+.logo-text {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1.6rem;
+    color: var(--primary-purple);
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.1;
+}
+
+.logo-sub {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    color: var(--accent-gold);
+    text-transform: uppercase;
+    font-family: sans-serif;
+    margin-top: 2px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a:hover {
+    color: var(--accent-gold);
+}
+
+.mobile-menu-btn {
+    display: none;
+    font-size: 1.5rem;
+    color: var(--primary-purple);
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+/* ============================================
+   4. Hero 主視覺區塊
+   ============================================ */
+.hero {
+    height: 90vh;
+    position: relative;
+    background: url('img/home.png') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(106, 90, 138, 0.5));
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================
+   5. 獨家方案區塊
+   ============================================ */
+.package-section {
+    background: linear-gradient(to bottom, #fff, #f3f0f7);
+}
+
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.package-card {
+    background: var(--white);
+    border: 1px solid rgba(197, 160, 101, 0.3);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: 0.3s;
+    overflow: hidden;
+}
+
+.package-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(150, 134, 184, 0.2);
+}
+
+.badge {
+    position: absolute;
+    top: 20px;
+    right: -30px;
+    background: var(--accent-gold);
+    color: white;
+    padding: 5px 40px;
+    transform: rotate(45deg);
+    font-size: 0.9rem;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.package-title {
+    font-size: 1.8rem;
+    color: var(--primary-purple);
+    margin-bottom: 10px;
+}
+
+.package-subtitle {
+    color: var(--accent-gold);
+    font-weight: bold;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.package-divider {
+    height: 1px;
+    background: #eee;
+    margin: 20px auto;
+    width: 80%;
+}
+
+.package-features {
+    text-align: left;
+    margin-bottom: 30px;
+    display: inline-block;
+}
+
+.package-features li {
+    margin-bottom: 12px;
+    font-size: 1.05rem;
+}
+
+.package-features i {
+    color: var(--accent-gold);
+    margin-right: 10px;
+}
+
+/* ============================================
+   6. 服務區塊 - 左右佈局
+   ============================================ */
+.service-row {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 80px;
+}
+
+.service-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.service-img {
+    flex: 1;
+    height: 400px;
+    border-radius: 20px 0 20px 0;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.service-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.service-img:hover img {
+    transform: scale(1.05);
+}
+
+.service-text {
+    flex: 1;
+}
+
+.service-text h3 {
+    font-size: 2rem;
+    color: var(--primary-purple);
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--accent-gold);
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.service-list {
+    margin: 20px 0 30px 0;
+}
+
+.service-list li {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.service-list li i {
+    color: var(--accent-gold);
+    margin-right: 10px;
+}
+
+/* ============================================
+   7. 統一卡片設計系統 (Unified Card Design)
+   ============================================ */
+/* 統一標題間距 */
+.section-header {
+    margin-bottom: 50px;
+}
+
+.section-header p {
+    margin-top: 10px;
+}
+
+/* 統一網格系統 */
+.card-grid {
+    display: grid;
+    gap: 30px;
+}
+
+/* 美顏區塊：電腦版 3 欄 */
+.card-grid.col-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* SPA 區塊：電腦版 2 欄 */
+.card-grid.col-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* 核心：統一卡片設計 */
+.service-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid transparent;
+    position: relative;
+}
+
+/* 滑鼠移過去的效果 */
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(106, 90, 138, 0.1);
+    border-color: var(--accent-gold);
+}
+
+/* 統一 Icon */
+.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--accent-gold);
+}
+
+/* 統一卡片標題 */
+.service-card h4 {
+    font-size: 1.3rem;
+    color: var(--dark-purple);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* 統一內文 */
+.service-card .desc {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 20px;
+    text-align: justify;
+    line-height: 1.6;
+}
+
+/* 分隔線 (SPA專用) */
+.card-divider {
+    height: 1px;
+    background: #eee;
+    width: 80%;
+    margin: 0 auto 20px auto;
+}
+
+/* 統一標籤 (Tags) */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+}
+
+.tags span {
+    background: #f8f5ff;
+    color: var(--dark-purple);
+    font-size: 0.8rem;
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+/* 特殊標籤 (Badge) */
+.safe-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary-purple);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
+    z-index: 10;
+}
+
+/* 圖片卡片中的 safe-badge 位置調整 */
+.service-card.image-mode {
+    position: relative;
+}
+
+.service-card.image-mode .safe-badge {
+    top: 10px;
+    right: 10px;
+    left: auto;
+    transform: none;
+}
+
+/* 特別推薦卡片中的 safe-badge 樣式 */
+.service-card.feature-mode {
+    position: relative;
+}
+
+.service-card.feature-mode .safe-badge {
+    background: white;
+    color: var(--accent-gold);
+    top: 10px;
+    right: 10px;
+    left: auto;
+    transform: none;
+}
+
+/* CTA 卡片特殊色 */
+.cta-card {
+    background: var(--primary-purple);
+    text-align: center;
+    justify-content: center;
+}
+
+/* 護膚觀念卡樣式 */
+.beauty-concept-box {
+    background: #fff;
+    border-radius: 15px;
+    padding: 40px;
+    margin-bottom: 50px;
+    border-left: 5px solid var(--accent-gold);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+.concept-title {
+    color: var(--dark-purple);
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.concept-title::before {
+    content: '\f0eb';
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 15px;
+    color: var(--accent-gold);
+    font-size: 1.2rem;
+}
+
+.concept-text {
+    color: #555;
+    line-height: 1.8;
+    font-size: 1.05rem;
+    text-align: justify;
+}
+
+.concept-text strong {
+    color: var(--dark-purple);
+    background: linear-gradient(120deg, rgba(197, 160, 101, 0.2) 0%, rgba(197, 160, 101, 0.2) 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 40%;
+    background-position: 0 90%;
+}
+
+/* ============================================
+   8. SPA 圖片卡片樣式
+   ============================================ */
+/* 圖片卡片樣式 (Image Card Mode) */
+.service-card.image-mode {
+    padding: 0;
+    overflow: hidden;
+}
+
+.card-img-top {
+    height: 220px;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-img-top img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+/* Spa3.png 圖片調整位置，顯示最右上方機器重點 */
+.spa3-img {
+    object-position: right top;
+}
+
+/* 圖片濾鏡：讓照片稍微帶點暖色，統一色調 */
+.img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(197, 160, 101, 0.1);
+    mix-blend-mode: multiply;
+}
+
+.service-card:hover .card-img-top img {
+    transform: scale(1.1);
+}
+
+.card-body {
+    padding: 25px;
+}
+
+/* 特別推薦卡樣式 (Feature Card Mode) */
+.service-card.feature-mode {
+    background: linear-gradient(135deg, var(--accent-gold) 0%, #d4b06e 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: none;
+}
+
+.feature-content {
+    padding: 20px;
+    position: relative;
+    width: 100%;
+}
+
+/* 標籤微調 */
+.service-card.feature-mode .tags {
+    justify-content: center;
+    margin-top: 15px;
+}
+
+/* ============================================
+   9. 送禮專區
+   ============================================ */
+.gifting-section {
+    background-color: var(--primary-purple);
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+
+.gifting-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -10%;
+    width: 500px;
+    height: 500px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+}
+
+.gift-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.gift-mockup {
+    width: 400px;
+    background: var(--white);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.steps {
+    display: flex;
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.step-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+/* ============================================
+   9. 手機版底部懸浮 Bar
+   ============================================ */
+.mobile-sticky-bar {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: var(--white);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    align-items: center;
+    padding: 0 15px;
+}
+
+.btn-sticky-line {
+    width: 100%;
+    background: #00B900;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+/* ============================================
+   10. 響應式設計 (RWD)
+   ============================================ */
+@media (max-width: 992px) {
+    .card-grid.col-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .card-grid.col-3,
+    .card-grid.col-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .beauty-concept-box {
+        padding: 25px;
+    }
+
+    .concept-title {
+        font-size: 1.3rem;
+    }
+
+    .desktop-cta {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .packages-grid,
+    .features-grid,
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-row,
+    .service-row.reverse,
+    .gift-box {
+        flex-direction: column;
+    }
+
+    .service-img {
+        width: 100%;
+        height: 250px;
+    }
+
+    .mobile-sticky-bar {
+        display: flex;
+    }
+
+    body {
+        padding-bottom: 70px;
+    }
+}
