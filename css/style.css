@@ -774,7 +774,7 @@ header {
 /* ============================================
    11. 聯絡我們區塊樣式 (支柱佈局)
    ============================================ */
-/* --- 全域設定：背景浮水印 --- */
+/* --- 背景浮水印 (維持不變) --- */
 .bg-watermark::before {
     content: "";
     position: absolute;
@@ -788,141 +788,116 @@ header {
     background-image: url('../img/Logo.png');
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: cover; /* 調整為 cover 以符合畫面大小 */
+    background-size: 60%;
     opacity: 0.06;
 }
 
-/* --- 容器設定 (關鍵修改：加入 wrap) --- */
-.contact-pillars {
+/* --- 列表容器 --- */
+.contact-editorial-list {
+    max-width: 650px; /* 限制寬度，讓線條不會太長 */
+    margin: 0 auto;   /* 置中 */
+    /* 這裡沒有 background，直接透視背景 */
+}
+
+/* --- 單個項目 (Row) --- */
+.editorial-item {
     display: flex;
-    justify-content: center; /* 讓內容水平置中 */
-    flex-wrap: wrap;         /* 【關鍵】允許空間不足時自動換行 */
-    gap: 15px;              /* 項目之間的間距 - 減少間距 */
-    max-width: 1000px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
+    align-items: center; /* 垂直置中 */
+    justify-content: space-between; /* 左右分開：標題左、內容右 */
+    padding: 25px 0; /* 上下留白，增加空氣感 */
+    border-bottom: 1px solid rgba(197, 160, 101, 0.3); /* 金色細分隔線 */
 }
 
-/* --- 單個項目設定 (關鍵修改：加入 min-width) --- */
-.contact-pillar-item {
-    flex: 1;                 /* 預設均分空間 */
-    min-width: 280px;        /* 【關鍵】最少要這麼寬，不然就換行 */
-    max-width: 320px;        /* 限制最大寬度，避免單獨一行時變得太寬 */
-    
-    display: flex;           /* 強制使用 Flex 排版 */
-    flex-direction: column;  /* 垂直排列 (圖上文下) */
-    align-items: center;     /* 【關鍵】強制內容水平置中 */
-    text-align: center;      /* 【關鍵】強制文字置中 */
-    
-    padding: 5px 5px;      /* 減少上下內距 */
-    transition: 0.3s;
-    border-bottom: none; /* 移除分隔線 */
+/* 最後一個項目不要底線 */
+.editorial-item.no-border {
+    border-bottom: none;
 }
 
-.contact-pillar-item:hover {
-    transform: translateY(-5px);
-}
-
-/* --- Icon 設定 --- */
-.pillar-icon {
-    width: 70px;
-    height: 70px;
-    background: #fff;       /* 給白底，避免跟背景 Logo 打架 */
-    color: var(--accent-gold);
-    border: 1px solid var(--accent-gold); /* 統一加金框，風格更一致 */
-    border-radius: 50%;
+/* --- 左側：標題區 --- */
+.item-label {
     display: flex;
     align-items: center;
-    justify-content: center;
-    font-size: 1.6rem;
-    margin-bottom: 20px;    /* Icon 下方留白 */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    transition: 0.3s;
+    gap: 15px;
+    flex-shrink: 0; /* 防止標題被擠壓 */
 }
 
-.contact-pillar-item:hover .pillar-icon {
-    background: var(--accent-gold);
-    color: white;
-    transform: scale(1.1);
-    box-shadow: 0 15px 30px rgba(197, 160, 101, 0.25);
-}
-
-/* --- 文字內容設定 --- */
-.pillar-content {
+.item-label i {
+    color: var(--accent-gold);
+    font-size: 1.2rem;
+    width: 30px;
     text-align: center;
-    width: 100%;
 }
 
-.pillar-content h4 {
+.item-label .zh-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1.1rem;
     color: var(--dark-purple);
-    font-size: 1rem;
-    letter-spacing: 1px;
-    margin-bottom: 10px;
     font-weight: bold;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px; /* 圖標與文字之間的間距 */
+    letter-spacing: 1px;
 }
 
-.pillar-content h4 i {
-    color: var(--accent-gold);
-    font-size: 0.9rem;
-}
-
-.pillar-content p {
+/* --- 右側：內容區 --- */
+.item-content {
+    text-align: right; /* 內容靠右對齊 */
     color: #666;
+    font-size: 1rem;
     line-height: 1.6;
-    margin-bottom: 15px;
-    font-size: 0.95rem;
 }
 
-/* --- 連結與按鈕設定 --- */
-.map-link {
-    font-size: 0.9rem;
+.highlight {
+    color: var(--dark-purple);
+    font-weight: bold;
+    font-family: 'Noto Sans TC', sans-serif; /* 使用現有的字體 */
+    font-size: 1.1rem;
+}
+
+.note {
+    font-size: 0.85rem;
+    color: #999;
+    margin-left: 5px;
+}
+
+.text-link {
+    font-size: 0.85rem;
     color: var(--accent-gold);
     text-decoration: none;
-    border-bottom: 1px solid rgba(197, 160, 101, 0.3);
-    padding-bottom: 2px;
-    transition: 0.3s;
-    display: inline-block;
-}
-
-.map-link:hover {
-    color: var(--dark-purple);
-    border-bottom-color: var(--dark-purple);
-}
-
-.btn-sm {
-    display: inline-block;
-    margin-top: 5px;
-    padding: 8px 25px;
-    font-size: 0.9rem;
-    background-color: var(--accent-gold);
-    color: white;
-    border: none;
-    border-radius: 50px;
+    border-bottom: 1px solid var(--accent-gold);
     transition: 0.3s;
 }
 
-.btn-sm:hover {
-    background-color: #bfa065;
-    transform: translateY(-2px);
+.text-link:hover {
+    opacity: 0.7;
 }
 
-/* --- 手機版特別調整 (當螢幕小於 768px 時) --- */
-@media (max-width: 768px) {
-    .contact-pillars {
-        gap: 0; /* 手機版不需要外間距，改用內距分隔 */
+.phone-num {
+    font-size: 1.4rem;
+    color: var(--accent-gold);
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-family: 'Noto Sans TC', sans-serif; /* 使用現有的字體 */
+    transition: 0.3s;
+}
+
+.phone-num:hover {
+    opacity: 0.8;
+}
+
+/* --- RWD 手機版調整 --- */
+@media (max-width: 576px) {
+    .contact-editorial-list {
+        max-width: 90%; /* 手機版寬度 */
     }
-    
-    .contact-pillar-item {
-        width: 100%;        /* 強制滿版 */
-        max-width: 100%;    /* 解除最大寬度限制 */
-        min-width: 100%;   /* 移除最小寬度限制 */
-        border-bottom: none; /* 移除分隔線 */
-        padding: 10px 10px; /* 減少上下內距 */
+
+    .editorial-item {
+        flex-direction: column; /* 改為上下排列 */
+        align-items: flex-start; /* 靠左對齊 */
+        gap: 10px;
+        padding: 20px 0;
+    }
+
+    .item-content {
+        text-align: left; /* 手機版內容改為靠左 */
+        padding-left: 45px; /* 縮排，對齊上面的文字 (icon 寬度 30 + gap 15) */
     }
 }
