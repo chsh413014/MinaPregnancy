@@ -1,6 +1,44 @@
 /* ============================================
    1. 核心變數與基礎設定
    ============================================ */
+
+/* 宇文天穹 UoqMunThenKhung（用於主標題） */
+@font-face {
+    font-family: 'UoqMunThenKhung';
+    src: url('https://cdn.jsdelivr.net/gh/MoonlitOwen/ThenKhung@main/fonts/ttf/UoqMunThenKhung-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* 標題專用字型類別 */
+.font-taipei-sans {
+    font-family: 'Taipei Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif;
+}
+
+.font-thenkhung {
+    font-family: 'UoqMunThenKhung', 'Taipei Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif;
+}
+
+/* 主標題較細視覺（宇文天穹無官方細體，以 font-weight 模擬） */
+.font-thenkhung.font-thenkhung-light {
+    font-weight: 300;
+}
+
+/* 清松手寫體（點綴用，活潑溫暖） */
+@font-face {
+    font-family: 'JasonHandwriting';
+    src: url('https://cdn.jsdelivr.net/gh/max32002/JasonHandWritingFonts@main/webfont/JasonHandwriting1-Regular.woff2') format('woff2'),
+         url('https://cdn.jsdelivr.net/gh/max32002/JasonHandWritingFonts@main/webfont/JasonHandwriting1-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+.font-handwriting {
+    font-family: 'JasonHandwriting', 'Taipei Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif;
+}
+
 :root {
     --primary-purple: #9686b8;  /* 柔和紫羅蘭 */
     --dark-purple: #6a5a8a;      /* 深紫色 */
@@ -21,7 +59,8 @@ html {
 }
 
 body {
-    font-family: 'Noto Sans TC', sans-serif;
+    /* 全站統一：台北黑體 → 微軟正黑體 → 蘋方 */
+    font-family: 'Taipei Sans TC', 'Microsoft JhengHei', 'PingFang TC', 'Helvetica Neue', sans-serif;
     background-color: var(--bg-cream);
     color: var(--text-charcoal);
     line-height: 1.6;
@@ -30,7 +69,8 @@ body {
 }
 
 h1, h2, h3, h4, .serif {
-    font-family: 'Noto Serif TC', serif;
+    /* 標題與全站一致：台北黑體（主視覺 h1 由 .font-thenkhung 覆蓋為宇文天穹） */
+    font-family: 'Taipei Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif;
     font-weight: 600;
 }
 
@@ -130,7 +170,7 @@ header {
 
 /* Logo 文字設計 */
 .logo-text {
-    font-family: 'Noto Serif TC', serif;
+    font-family: 'Taipei Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif;
     font-size: 1.6rem;
     color: var(--primary-purple);
     font-weight: 700;
@@ -140,12 +180,18 @@ header {
     line-height: 1.1;
 }
 
+/* Logo 使用宇文天穹時（.logo-sub 維持台北黑體），略細字重 */
+.logo-text.font-thenkhung {
+    font-family: 'UoqMunThenKhung', 'Taipei Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif;
+    font-weight: 300;
+}
+
 .logo-sub {
     font-size: 0.7rem;
     letter-spacing: 2px;
     color: var(--accent-gold);
     text-transform: uppercase;
-    font-family: sans-serif;
+    font-family: 'Taipei Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif;
     margin-top: 2px;
 }
 
@@ -400,6 +446,16 @@ header {
     color: var(--accent-gold);
 }
 
+/* card-icon 內圖片（美顏療程卡） */
+.card-icon img {
+    width: auto;
+    height: 56px;
+    max-width: 80px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
 /* 統一卡片標題 */
 .service-card h4 {
     font-size: 1.3rem;
@@ -491,6 +547,83 @@ header {
     justify-content: center;
 }
 
+/* 高質感美顏卡片 (premium-service-card) */
+.premium-service-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.02);
+}
+.premium-service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(100, 80, 120, 0.08);
+}
+.premium-image-wrapper {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: #f5f2f9;
+    border: 1px solid rgba(106, 90, 138, 0.08);
+    border-radius: 12px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 12px 12px 0;
+}
+.premium-image-wrapper img {
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center bottom;
+    transform: scale(1.10);
+    transform-origin: center bottom;
+}
+.premium-service-card .service-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--dark-purple);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-align: center;
+}
+.premium-service-card .service-title .title-emoji {
+    font-size: 1.05em;
+    line-height: 1;
+}
+.premium-service-card .desc {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex-grow: 1;
+    text-align: justify;
+}
+.premium-service-card .tags span {
+    background: #f0eef5;
+    color: #6b528a;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+.premium-service-card.cta-card {
+    background: linear-gradient(135deg, #8a73a3 0%, #6b528a 100%);
+    color: white;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
 /* 護膚觀念卡樣式 */
 .beauty-concept-box {
     background: #fff;
@@ -558,25 +691,27 @@ header {
     object-fit: cover;
     transition: 0.5s;
 }
-
 /* Spa3.png 圖片調整位置，顯示最右上方機器重點 */
 .spa3-img {
     object-position: right top;
 }
 
-/* 圖片濾鏡：讓照片稍微帶點暖色，統一色調 */
+/* 圖片覆蓋層：統一加上一點暖金色調 */
 .img-overlay {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(197, 160, 101, 0.1);
+    background: rgba(197, 160, 101, 0.08);
     mix-blend-mode: multiply;
 }
 
-.service-card:hover .card-img-top img {
-    transform: scale(1.1);
+/* 只有有滑鼠游標的裝置才啟動滑過放大效果（避免手機多餘動畫） */
+@media (hover: hover) and (pointer: fine) {
+    .service-card:hover .card-img-top img {
+        transform: scale(1.1);
+    }
 }
 
 .card-body {
@@ -655,7 +790,7 @@ header {
 }
 
 /* ============================================
-   9. 手機版底部懸浮 Bar
+   10. 手機版底部懸浮 Bar
    ============================================ */
 .mobile-sticky-bar {
     display: none;
@@ -687,11 +822,522 @@ header {
 }
 
 /* ============================================
-   10. 響應式設計 (RWD)
+   11. 聯絡我們區塊樣式 (支柱佈局)
+   ============================================ */
+/* --- 背景浮水印 --- */
+.bg-watermark::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* --- 列表容器 --- */
+.contact-editorial-list {
+    max-width: 650px; /* 限制寬度，讓線條不會太長 */ 
+    margin: 0 auto;   /* 置中 */
+    background: rgba(49, 38, 60, 0.26);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 24px;
+    padding: 10px 28px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.16);
+}
+
+/* --- 單個項目 (Row) --- */
+.editorial-item {
+    display: flex;
+    align-items: center; /* 垂直置中 */
+    justify-content: space-between; /* 左右分開：標題左、內容右 */
+    padding: 20px 0; /* 上下留白，增加空氣感 */
+    border-bottom: 1px solid rgba(197, 160, 101, 0.3); /* 金色細分隔線 */
+}
+
+/* 最後一個項目不要底線 */
+.editorial-item.no-border {
+    border-bottom: none;
+}
+
+/* --- 左側：標題區 --- */
+.item-label {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-shrink: 0; /* 防止標題被擠壓 */
+}
+
+.item-label i {
+    color: var(--accent-gold);
+    font-size: 1.2rem;
+    width: 30px;
+    text-align: center;
+}
+
+.item-label .zh-title {
+    font-family: 'Taipei Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif;
+    font-size: 1.1rem;
+    color: var(--dark-purple);
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* --- 右側：內容區 --- */
+.item-content {
+    text-align: right; /* 內容靠右對齊 */
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.highlight {
+    color: var(--dark-purple);
+    font-weight: bold;
+    font-family: 'Taipei Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif;
+    font-size: 1.1rem;
+}
+
+.note {
+    font-size: 0.85rem;
+    color: #999;
+    margin-left: 5px;
+}
+
+.text-link {
+    font-size: 0.85rem;
+    color: var(--accent-gold);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent-gold);
+    transition: 0.3s;
+}
+
+.text-link:hover {
+    opacity: 0.7;
+}
+
+.phone-num {
+    font-size: 1.4rem;
+    color: var(--accent-gold);
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-family: 'Taipei Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif;
+    transition: 0.3s;
+}
+
+.phone-num:hover {
+    opacity: 0.8;
+}
+
+/* ============================================
+   12. 沉浸式紫色風格 - 聯絡我們區塊
+   ============================================ */
+
+/* --- 核心背景設定 --- */
+.bg-immersive-purple {
+    /* 使用 Logo 作為滿版背景，搭配品牌紫色疊層 */
+    background-color: #8D82B3;
+    background-image: url('../img/Logo.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    
+    /* 文字預設顏色為白色 */
+    color: #ffffff;
+    
+    /* 確保區塊定位正確 */
+    position: relative;
+    overflow: hidden;
+}
+
+#contact.section-padding {
+    padding: 50px 0;
+}
+
+/* 選用：淡淡的紫色漸層遮罩層，讓背景圖與文字融合更自然 */
+.bg-immersive-purple::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(48, 38, 59, 0.72) 0%, rgba(106, 90, 138, 0.62) 50%, rgba(141, 130, 179, 0.52) 100%);
+    z-index: 0;
+    pointer-events: none; /* 確保遮罩不會干擾點擊 */
+}
+
+/* 確保內容在遮罩之上 */
+.bg-immersive-purple .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* --- 標題區樣式 --- */
+.bg-immersive-purple .contact-title {
+    color: var(--accent-gold);
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.bg-immersive-purple .contact-subtitle {
+    color: #ffffff;
+    font-size: 1.6rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.bg-immersive-purple .contact-divider {
+    width: 50px;
+    height: 2px;
+    background: var(--accent-gold);
+    margin: 16px auto 34px auto;
+    opacity: 0.8;
+}
+
+.bg-immersive-purple .section-header {
+    margin-bottom: 36px;
+}
+
+/* --- 深底淺字樣式設定 --- */
+.text-white {
+    color: #ffffff !important;
+}
+
+/* 列表項目：移除底線，讓畫面更乾淨 */
+.on-dark-bg .editorial-item {
+    border-bottom: none; /* 深色背景上不加分隔線更高級 */
+    padding: 18px 0;
+    transition: all 0.3s ease;
+}
+
+/* 滑鼠移過去的微互動效果 */
+.on-dark-bg .editorial-item:hover {
+    transform: translateX(5px);
+}
+
+/* 左側標題與 Icon */
+.on-dark-bg .item-label i {
+    color: var(--accent-gold);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.on-dark-bg .item-label .zh-title {
+    color: #ffffff;
+    opacity: 0.95;
+    font-weight: 600;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+/* 右側內容文字 */
+.on-dark-bg .item-content {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* 右側內容強調色 (金色) */
+.highlight-gold {
+    color: var(--accent-gold);
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* 備註文字 (半透明白色) */
+.note-light {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.65);
+    margin-left: 5px;
+}
+
+/* 連結樣式 (金色) */
+.text-link-gold {
+    font-size: 0.85rem;
+    color: var(--accent-gold);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent-gold);
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin-top: 8px;
+}
+
+.text-link-gold:hover {
+    color: #ffffff;
+    border-bottom-color: #ffffff;
+    transform: translateX(3px);
+}
+
+/* 電話號碼樣式 (金色大字) */
+.phone-num-gold {
+    font-size: 1.5rem;
+    color: var(--accent-gold);
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-family: 'Taipei Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif;
+    transition: all 0.3s ease;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.phone-num-gold:hover {
+    color: #ffffff;
+    transform: scale(1.05);
+}
+
+/* ============================================
+   13. SPA 雜誌錯落排版 (Immersive Alternating Layout)
+   ============================================ */
+.spa-editorial-container {
+    margin-top: 60px;
+}
+
+.spa-editorial-row {
+    display: flex;
+    align-items: center;
+    gap: 8%;
+    margin-bottom: 120px;
+}
+
+/* 偶數列：左右交錯翻轉 */
+.spa-editorial-row:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.spa-editorial-row:last-child {
+    margin-bottom: 0;
+}
+
+.spa-image-col {
+    flex: 1.2;
+    position: relative;
+}
+
+.spa-text-col {
+    flex: 1;
+    padding: 0 10px;
+}
+
+/* 16:9 圖片容器與極致慢速動畫 */
+.spa-image-wrapper {
+    aspect-ratio: 16 / 9;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+    position: relative;
+    background-color: #eae6e1;
+}
+
+.spa-image-wrapper::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(150, 134, 184, 0.08) 0%, rgba(106, 90, 138, 0.1) 100%);
+    pointer-events: none;
+}
+
+.spa-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 40%;
+    filter: saturate(1) sepia(0);
+    transition: transform 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.8s ease;
+}
+
+.spa-editorial-row:hover .spa-image-wrapper img {
+    transform: scale(1.04);
+    filter: saturate(1) contrast(1) sepia(0);
+}
+
+/* 新版 SPA 圖片角標，覆蓋舊 safe-badge 定位 */
+.spa-image-wrapper .safe-badge {
+    top: 16px;
+    right: 16px;
+    left: auto;
+    transform: none;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.92);
+    color: var(--dark-purple);
+    font-weight: 600;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* 文字排版細節 */
+.spa-num {
+    display: block;
+    color: var(--accent-gold);
+    font-size: 1.1rem;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+    font-family: 'Taipei Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif;
+}
+
+.spa-title {
+    color: var(--primary-purple);
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.spa-desc {
+    color: #666;
+    font-size: 1.05rem;
+    line-height: 1.9;
+    text-align: justify;
+    margin-bottom: 30px;
+}
+
+.spa-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.spa-tags span {
+    font-size: 0.85rem;
+    color: var(--accent-gold);
+    border: 1px solid rgba(197, 160, 101, 0.3);
+    padding: 6px 16px;
+    border-radius: 30px;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.spa-tags span:hover {
+    background: rgba(197, 160, 101, 0.05);
+}
+
+/* 第 4 個 VIP 專屬區塊排版 (隱形馬甲) */
+.spa-vip-text-col {
+    background: linear-gradient(135deg, #4a3a59 0%, #30263b 100%);
+    padding: 50px 40px;
+    border-radius: 8px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.spa-vip-text-col .spa-num {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.spa-vip-text-col .spa-title {
+    color: white;
+}
+
+.spa-vip-text-col .spa-desc {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.spa-vip-text-col .spa-tags span {
+    color: white;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.spa-vip-text-col .spa-tags span:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.vip-badge {
+    position: absolute;
+    top: -15px;
+    right: 30px;
+    background: var(--accent-gold);
+    color: white;
+    padding: 6px 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(197, 160, 101, 0.3);
+}
+
+/* 方案 A：全幅純文字 VIP 區塊 */
+.spa-editorial-row.spa-vip-only {
+    justify-content: center;
+}
+
+.spa-vip-fullwidth {
+    flex: 1 1 100%;
+    max-width: 860px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.spa-vip-fullwidth .spa-desc {
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.spa-vip-fullwidth .spa-title {
+    border-bottom: 1px solid rgba(197, 160, 101, 0.3);
+    padding-bottom: 20px;
+    display: inline-block;
+}
+
+.spa-vip-fullwidth .spa-tags {
+    justify-content: center;
+}
+
+.spa-vip-slogan {
+    font-size: 0.85rem;
+    letter-spacing: 4px;
+    color: rgba(255, 255, 255, 0.45);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    margin-top: 8px;
+    font-family: 'Taipei Sans TC', 'Microsoft JhengHei', sans-serif;
+}
+
+.spa-vip-checks {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 10px;
+}
+
+.spa-vip-checks span {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.75);
+    letter-spacing: 1px;
+}
+
+.spa-vip-checks span i {
+    color: var(--accent-gold);
+    margin-right: 6px;
+}
+
+@media (max-width: 768px) {
+    .spa-vip-checks {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .spa-vip-checks span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+/* ============================================
+   響應式設計 (RWD)
    ============================================ */
 @media (max-width: 992px) {
     .card-grid.col-3 {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .spa-editorial-row {
+        gap: 40px;
+        margin-bottom: 90px;
     }
 }
 
@@ -703,6 +1349,39 @@ header {
     .card-grid.col-3,
     .card-grid.col-2 {
         grid-template-columns: 1fr;
+    }
+
+    .spa-editorial-row,
+    .spa-editorial-row:nth-child(even) {
+        flex-direction: column;
+        gap: 40px;
+        margin-bottom: 80px;
+    }
+
+    .spa-text-col {
+        padding: 0;
+        text-align: center;
+    }
+
+    .spa-title {
+        font-size: 1.5rem;
+    }
+
+    .spa-desc {
+        text-align: left;
+        font-size: 1rem;
+    }
+
+    .spa-tags {
+        justify-content: center;
+    }
+
+    .spa-vip-text-col {
+        padding: 40px 25px;
+    }
+
+    .vip-badge {
+        right: 20px;
     }
 
     .beauty-concept-box {
@@ -768,125 +1447,29 @@ header {
     body {
         padding-bottom: 70px;
     }
-
 }
 
-/* ============================================
-   11. 聯絡我們區塊樣式 (支柱佈局)
-   ============================================ */
-/* --- 背景浮水印 (維持不變) --- */
-.bg-watermark::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    
-    /* Logo 浮水印背景 - 使用現有的 Logo.png */
-    background-image: url('../img/Logo.png');
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 60%;
-    opacity: 0.06;
-}
-
-/* --- 列表容器 --- */
-.contact-editorial-list {
-    max-width: 650px; /* 限制寬度，讓線條不會太長 */
-    margin: 0 auto;   /* 置中 */
-    /* 這裡沒有 background，直接透視背景 */
-}
-
-/* --- 單個項目 (Row) --- */
-.editorial-item {
-    display: flex;
-    align-items: center; /* 垂直置中 */
-    justify-content: space-between; /* 左右分開：標題左、內容右 */
-    padding: 25px 0; /* 上下留白，增加空氣感 */
-    border-bottom: 1px solid rgba(197, 160, 101, 0.3); /* 金色細分隔線 */
-}
-
-/* 最後一個項目不要底線 */
-.editorial-item.no-border {
-    border-bottom: none;
-}
-
-/* --- 左側：標題區 --- */
-.item-label {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    flex-shrink: 0; /* 防止標題被擠壓 */
-}
-
-.item-label i {
-    color: var(--accent-gold);
-    font-size: 1.2rem;
-    width: 30px;
-    text-align: center;
-}
-
-.item-label .zh-title {
-    font-family: 'Noto Serif TC', serif;
-    font-size: 1.1rem;
-    color: var(--dark-purple);
-    font-weight: bold;
-    letter-spacing: 1px;
-}
-
-/* --- 右側：內容區 --- */
-.item-content {
-    text-align: right; /* 內容靠右對齊 */
-    color: #666;
-    font-size: 1rem;
-    line-height: 1.6;
-}
-
-.highlight {
-    color: var(--dark-purple);
-    font-weight: bold;
-    font-family: 'Noto Sans TC', sans-serif; /* 使用現有的字體 */
-    font-size: 1.1rem;
-}
-
-.note {
-    font-size: 0.85rem;
-    color: #999;
-    margin-left: 5px;
-}
-
-.text-link {
-    font-size: 0.85rem;
-    color: var(--accent-gold);
-    text-decoration: none;
-    border-bottom: 1px solid var(--accent-gold);
-    transition: 0.3s;
-}
-
-.text-link:hover {
-    opacity: 0.7;
-}
-
-.phone-num {
-    font-size: 1.4rem;
-    color: var(--accent-gold);
-    font-weight: bold;
-    text-decoration: none;
-    letter-spacing: 1px;
-    font-family: 'Noto Sans TC', sans-serif; /* 使用現有的字體 */
-    transition: 0.3s;
-}
-
-.phone-num:hover {
-    opacity: 0.8;
+@media (max-width: 576px) {
+    .hero-content h1 {
+        font-size: 1.7rem;
+        line-height: 1.3;
+    }
 }
 
 /* --- RWD 手機版調整 --- */
 @media (max-width: 576px) {
+    #contact.section-padding {
+        padding: 40px 0;
+    }
+
+    .bg-immersive-purple {
+        background-position: 38% center;
+    }
+
     .contact-editorial-list {
         max-width: 90%; /* 手機版寬度 */
+        padding: 18px 20px;
+        border-radius: 20px;
     }
 
     .editorial-item {
@@ -899,5 +1482,37 @@ header {
     .item-content {
         text-align: left; /* 手機版內容改為靠左 */
         padding-left: 45px; /* 縮排，對齊上面的文字 (icon 寬度 30 + gap 15) */
+    }
+
+    /* 手機版沉浸式紫色風格微調 */
+    .on-dark-bg .editorial-item {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+        padding: 18px 0;
+    }
+    
+    .on-dark-bg .editorial-item.no-border {
+        border-bottom: none !important;
+    }
+    
+    .bg-immersive-purple .contact-title {
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+    }
+    
+    .bg-immersive-purple .contact-subtitle {
+        font-size: 1.3rem;
+    }
+
+    .bg-immersive-purple .section-header {
+        margin-bottom: 28px;
+    }
+    
+    .phone-num-gold {
+        font-size: 1.3rem;
+        letter-spacing: 1.5px;
+    }
+    
+    .on-dark-bg .item-content {
+        padding-left: 45px;
     }
 }
