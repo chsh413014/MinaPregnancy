@@ -1456,8 +1456,328 @@ header {
     }
 }
 
+/* 促銷升級卡 */
+.upgrade-stack {
+    display: grid;
+    gap: 18px;
+}
+
+.upgrade-spotlight {
+    background: linear-gradient(135deg, #fffaf3 0%, #fff 100%);
+    border: 1px solid rgba(197, 160, 101, 0.28);
+    border-radius: 24px;
+    padding: 28px 30px;
+    box-shadow: 0 14px 32px rgba(197, 160, 101, 0.12);
+}
+
+.upgrade-spotlight-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+}
+
+.upgrade-tag {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: var(--accent-gold);
+    color: #fff;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.upgrade-tag-secondary {
+    background: var(--dark-purple);
+    margin-bottom: 12px;
+}
+
+.upgrade-note {
+    color: #b48d4d;
+    font-size: 0.88rem;
+}
+
+.upgrade-spotlight-body {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 24px;
+    align-items: center;
+}
+
+.upgrade-count {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #c5a065 0%, #d9b47a 100%);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 24px rgba(197, 160, 101, 0.24);
+}
+
+.upgrade-count-num {
+    font-size: 3.2rem;
+    line-height: 1;
+    font-weight: 700;
+}
+
+.upgrade-count-text {
+    font-size: 0.95rem;
+    letter-spacing: 2px;
+}
+
+.upgrade-copy h3,
+.upgrade-secondary-card h3 {
+    font-size: 1.55rem;
+    color: var(--dark-purple);
+    margin-bottom: 10px;
+}
+
+.upgrade-copy p,
+.upgrade-secondary-card p {
+    color: #6a645f;
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+.upgrade-pills {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+}
+
+.upgrade-pills span {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(197, 160, 101, 0.12);
+    color: #9d7f4e;
+    font-size: 0.82rem;
+}
+
+.upgrade-secondary-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    flex-wrap: wrap;
+    background: linear-gradient(145deg, #fff9f0, #fbf7ff);
+    border: 1px solid rgba(106, 90, 138, 0.12);
+    border-radius: 22px;
+    padding: 26px 28px;
+}
+
+.upgrade-value-box {
+    min-width: 120px;
+    text-align: center;
+    background: rgba(197, 160, 101, 0.1);
+    border-radius: 16px;
+    padding: 12px 18px;
+}
+
+.upgrade-value-box span {
+    display: block;
+    color: #9b8673;
+    font-size: 0.78rem;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+.upgrade-value-box strong {
+    color: var(--dark-purple);
+    font-size: 1.65rem;
+    line-height: 1.2;
+}
+
+@media (max-width: 600px) {
+    .upgrade-spotlight {
+        padding: 24px 18px;
+    }
+
+    .upgrade-spotlight-body {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        text-align: center;
+    }
+
+    .upgrade-count {
+        margin: 0 auto;
+        width: 96px;
+        height: 96px;
+    }
+
+    .upgrade-count-num {
+        font-size: 2.6rem;
+    }
+
+    .upgrade-copy h3,
+    .upgrade-secondary-card h3 {
+        font-size: 1.35rem;
+    }
+
+    .upgrade-pills {
+        justify-content: center;
+    }
+
+    .upgrade-secondary-card {
+        padding: 22px 18px;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .upgrade-value-box {
+        width: 100%;
+        max-width: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    #packages .promo-poster {
+        padding: 32px 20px 24px !important;
+        border-radius: 22px !important;
+    }
+
+    #packages .promo-poster-content {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 20px !important;
+    }
+
+    #packages .promo-copy {
+        max-width: none !important;
+        text-align: center;
+    }
+
+    #packages .promo-title {
+        font-size: 2.1rem !important;
+    }
+
+    #packages .promo-subtitle {
+        font-size: 1.05rem !important;
+        margin-bottom: 16px !important;
+    }
+
+    #packages .promo-offer-badge {
+        margin-bottom: 16px !important;
+    }
+
+    #packages .promo-offer-items,
+    #packages .promo-price-row {
+        justify-content: center;
+    }
+
+    #packages .promo-price {
+        font-size: 3.3rem !important;
+    }
+
+    #packages .promo-price-note {
+        width: 100%;
+        margin-bottom: 0 !important;
+    }
+
+    #packages .promo-visual {
+        min-width: 0 !important;
+        max-width: none !important;
+        margin-left: 0 !important;
+    }
+
+    #packages .promo-visual-frame {
+        height: 280px !important;
+        border-radius: 22px !important;
+    }
+
+    #packages .promo-summary {
+        position: static !important;
+        left: auto !important;
+        bottom: auto !important;
+        transform: none !important;
+        width: 100% !important;
+        margin-top: 8px;
+        padding: 18px 16px !important;
+        border-radius: 20px !important;
+    }
+
+    #packages .promo-summary-inner {
+        flex-direction: column;
+        gap: 14px !important;
+        align-items: center !important;
+    }
+
+    #packages .promo-feature {
+        justify-content: center;
+    }
+
+    #packages .promo-summary-plus {
+        align-self: center;
+    }
+
+    #packages .promo-cta-box {
+        padding: 24px 20px !important;
+    }
+
+    #packages .promo-cta-box .btn {
+        width: 100%;
+        max-width: 320px;
+    }
+}
+
 /* --- RWD 手機版調整 --- */
 @media (max-width: 576px) {
+    #packages .promo-poster {
+        padding: 24px 16px 18px !important;
+    }
+
+    #packages .promo-title {
+        font-size: 1.8rem !important;
+    }
+
+    #packages .promo-eyebrow,
+    #packages .promo-offer-badge {
+        font-size: 0.78rem !important;
+        letter-spacing: 1px !important;
+    }
+
+    #packages .promo-offer-items {
+        gap: 8px !important;
+    }
+
+    #packages .promo-offer-items span {
+        font-size: 1.05rem !important;
+    }
+
+    #packages .promo-price {
+        font-size: 2.8rem !important;
+    }
+
+    #packages .promo-price-note {
+        font-size: 0.95rem !important;
+    }
+
+    #packages .promo-visual-frame {
+        height: 230px !important;
+    }
+
+    #packages .promo-summary {
+        padding: 16px 14px !important;
+    }
+
+    #packages .promo-feature {
+        gap: 10px !important;
+    }
+
+    #packages .promo-feature p:first-child {
+        font-size: 0.95rem !important;
+    }
+
+    #packages .promo-feature p:last-child {
+        font-size: 0.78rem !important;
+    }
+
     #contact.section-padding {
         padding: 40px 0;
     }
