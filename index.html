@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/taipei-sans-tc@0.1.1/dist/Regular/TaipeiSansTCBeta-Regular.css" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -15,7 +16,7 @@
 
     <header>
         <div class="container nav-container">
-            <div class="logo-text">
+            <div class="logo-text font-thenkhung">
                 亞莉孕婦SPA
                 <span class="logo-sub">MINA PREGNANCY SPA</span>
             </div>
@@ -24,67 +25,139 @@
                 <ul class="nav-links" id="navMenu">
                     <li><a href="#packages" onclick="toggleMenu()" style="color:var(--dark-purple); font-weight:bold;">精選方案</a></li>
                     <li><a href="#pregnancy" onclick="toggleMenu()">孕產護理</a></li>
-                    <li><a href="#beauty" onclick="toggleMenu()">孕期美顏</a></li>
-                    <li><a href="#spa" onclick="toggleMenu()">身心SPA</a></li>
+                    <li><a href="#beauty" onclick="toggleMenu()">美容護膚</a></li>
+                    <li><a href="#spa" onclick="toggleMenu()">SPA按摩</a></li>
                     <!-- <li><a href="#gifting" onclick="toggleMenu()">送禮專區</a></li> -->
                 </ul>
             </nav>
-            <a href="https://line.me/R/ti/p/@YourLineID" target="_blank" class="btn btn-gold desktop-cta">預約諮詢</a>
+            <a href="https://line.me/ti/p/WO0sI-UWeV" target="_blank" class="btn btn-gold desktop-cta">預約諮詢</a>
             <button class="mobile-menu-btn" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></button>
         </div>
     </header>
 
     <section class="hero">
         <div class="hero-content container">
-            <h1>孕期，是一場優雅的蛻變</h1>
-            <p>專屬於您的孕產奢華養護與高訂美顏時光</p>
+            <h1 class="font-thenkhung font-thenkhung-light">孕期，是一場優雅的蛻變</h1>
+            <p class="font-handwriting" style="font-size: 1.15rem;">專屬於您的孕產奢華養護與高訂美顏時光</p>
             <div style="margin-top: 30px;">
-                <a href="#packages" class="btn btn-gold">查看雙享方案</a>
+                <a href="#packages" class="btn btn-gold">查看最新活動方案</a>
             </div>
         </div>
     </section>
 
     <section id="packages" class="section-padding package-section">
         <div class="container">
-            <div class="text-center">
-                <h2 class="text-purple">亞莉精選・雙重呵護方案</h2>
-                <p class="text-muted" style="margin-top: 10px;">不只身體要放鬆，臉部肌膚更要細緻呵護</p>
-            </div>
 
-            <div class="packages-grid">
-                <div class="package-card">
-                    <div class="badge">推薦</div>
-                    <h3 class="package-title serif">女王孕期全餐</h3>
-                    <span class="package-subtitle">Body & Face Dual Care</span>
-                    <p style="color:#666; font-size:0.9rem;">擔心躺太久身體不適？我們懂妳。<br>本方案採「分次提領制」，讓妳分兩天享受極致呵護。</p>
-                    
-                    <div class="package-divider"></div>
-                    
-                    <ul class="package-features">
-                        <li><i class="fa-solid fa-check"></i> <b>Day 1：</b>孕婦全身舒緩按摩 (60min)</li>
-                        <li><i class="fa-solid fa-check"></i> <b>Day 2：</b>孕期安全液態飛梭 (60min)</li>
-                        <li><i class="fa-solid fa-heart"></i> <b>貼心亮點：</b>避免久躺、雙倍放鬆</li>
-                    </ul>
-                    <br>
-                    <a href="https://line.me/R/ti/p/@YourLineID?text=我想諮詢女王全餐分次方案" class="btn btn-gold">私訊諮詢女王方案</a>
+            <div class="promo-layout" style="max-width: 980px; margin: 0 auto;">
+                <div class="promo-poster" style="position: relative; overflow: hidden; border-radius: 28px; padding: 48px 42px 180px; background: linear-gradient(135deg, #fff8f0 0%, #f8f1eb 45%, #f6f0fa 100%); box-shadow: 0 18px 45px rgba(106, 90, 138, 0.12);">
+                    <div style="position: absolute; top: -60px; left: -40px; width: 180px; height: 180px; border-radius: 50%; background: rgba(197, 160, 101, 0.12);"></div>
+                    <div style="position: absolute; bottom: -50px; right: -30px; width: 170px; height: 170px; border-radius: 50%; background: rgba(150, 134, 184, 0.12);"></div>
+
+                    <div class="promo-poster-content" style="position: relative; display: flex; align-items: center; justify-content: space-between; gap: 28px; flex-wrap: wrap;">
+                        <div class="promo-copy" style="flex: 1 1 360px; max-width: 470px;">
+                            <p class="promo-eyebrow" style="display: inline-block; margin-bottom: 14px; padding: 6px 14px; border-radius: 999px; background: rgba(197,160,101,0.12); color: var(--accent-gold); font-size: 0.82rem; letter-spacing: 2px;">HAPPY MOTHER'S DAY</p>
+                            <h2 class="font-taipei-sans promo-title" style="font-size: 2.7rem; line-height: 1.2; color: #7d5a3f; margin-bottom: 8px;">母親節限定<br>療癒時光</h2>
+                            <p class="font-handwriting promo-subtitle" style="font-size: 1.2rem; color: #8c7f9f; margin-bottom: 20px;">讓身體與肌膚一起放鬆</p>
+                            <div class="promo-offer-badge" style="display: inline-block; background: #b87768; color: #fff; padding: 9px 22px; border-radius: 999px; font-size: 1rem; letter-spacing: 3px; margin-bottom: 18px;">限定優惠</div>
+                            <div class="promo-offer-items" style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 18px; color: #5a5048;">
+                                <span style="font-size: 1.35rem;">身體按摩 60 分鐘</span>
+                                <span style="font-size: 1.6rem; color: var(--accent-gold); font-weight: 700;">+</span>
+                                <span style="font-size: 1.35rem;">臉部護膚</span>
+                            </div>
+                            <div class="promo-price-row" style="display: flex; align-items: end; gap: 12px; flex-wrap: wrap;">
+                                <div>
+                                    <p style="font-size: 0.85rem; letter-spacing: 2px; color: #a28c7d; margin-bottom: 4px;">組合價</p>
+                                    <p class="promo-price" style="font-size: 4.1rem; line-height: 1; color: #b87768; font-weight: 700;">$1988</p>
+                                </div>
+                                <p class="font-handwriting promo-price-note" style="font-size: 1.1rem; color: var(--accent-gold); margin-bottom: 8px;">Special for you, Mom.</p>
+                            </div>
+                        </div>
+
+                        <div class="promo-visual" style="flex: 1 1 320px; min-width: 280px; max-width: 380px; margin-left: auto;">
+                            <div class="promo-visual-frame" style="position: relative; border-radius: 26px; overflow: hidden; height: 360px; box-shadow: 0 14px 35px rgba(0,0,0,0.12);">
+                                <img src="img/DM3.png" alt="母親節療癒時光" style="width: 100%; height: 100%; object-fit: cover;">
+                                <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(93,76,60,0.12), rgba(255,255,255,0.02));"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="promo-summary" style="position: absolute; left: 50%; bottom: 28px; transform: translateX(-50%); width: calc(100% - 56px); max-width: 820px; background: rgba(255,255,255,0.92); backdrop-filter: blur(6px); border: 1px solid rgba(197,160,101,0.22); border-radius: 24px; padding: 22px 24px;">
+                        <div class="promo-summary-inner" style="display: flex; align-items: center; justify-content: center; gap: 24px; flex-wrap: wrap;">
+                            <div class="promo-feature" style="display: flex; align-items: center; gap: 12px;">
+                                <div style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden; border: 2px solid var(--accent-gold); flex-shrink: 0;">
+                                    <img src="img/DM1.png" alt="身體按摩" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                                <div>
+                                    <p style="font-size: 1rem; color: #5c5047;">深層放鬆</p>
+                                    <p style="font-size: 0.82rem; color: #9a8d82;">舒緩腰背疲勞</p>
+                                </div>
+                            </div>
+                            <div class="promo-summary-plus" style="font-size: 1.5rem; color: var(--accent-gold); font-weight: 700;">+</div>
+                            <div class="promo-feature" style="display: flex; align-items: center; gap: 12px;">
+                                <div style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden; border: 2px solid var(--accent-gold); flex-shrink: 0;">
+                                    <img src="img/DM2.png" alt="臉部護膚" style="width: 100%; height: 100; object-fit: cover;">
+                                </div>
+                                <div>
+                                    <p style="font-size: 1rem; color: #5c5047;">透亮保濕</p>
+                                    <p style="font-size: 0.82rem; color: #9a8d82;">溫柔呵護肌膚</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="package-card">
-                    <h3 class="package-title serif">孕肌光采急救</h3>
-                    <span class="package-subtitle">Pregnancy Safe Facial</span>
-                    <p style="color:#666; font-size:0.9rem;">針對孕期賀爾蒙導致的痘痘、暗沉。<br>舊客回娘家或新客首購，皆享專屬體驗價。</p>
-                    
-                    <div class="package-divider"></div>
-                    
-                    <ul class="package-features">
-                        <li><i class="fa-solid fa-check"></i> <b>安全：</b>100% 物理性煥膚 (無酸類)</li>
-                        <li><i class="fa-solid fa-check"></i> <b>效果：</b>改善粉刺、毛孔、蠟黃</li>
-                        <li><i class="fa-solid fa-star"></i> <b>適用：</b>孕期中 / 產後哺乳期</li>
-                    </ul>
-                    <br>
-                    <a href="https://line.me/R/ti/p/@YourLineID?text=我想領取孕期美顏體驗價" class="btn btn-outline" style="background:var(--accent-gold); color:white;">領取美顏體驗價</a>
+                <div style="text-align: center; margin: 36px 0 18px;">
+                    <p style="color: var(--accent-gold); letter-spacing: 3px; font-size: 0.9rem;">課程升級方案</p>
+                </div>
+
+                <div class="upgrade-stack">
+                    <div class="upgrade-spotlight">
+                        <div class="upgrade-spotlight-head">
+                            <span class="upgrade-tag">推薦升級</span>
+                            <span class="upgrade-note">最適合規律保養</span>
+                        </div>
+                        <div class="upgrade-spotlight-body">
+                            <div class="upgrade-count">
+                                <span class="upgrade-count-num">5</span>
+                                <span class="upgrade-count-text">堂升級</span>
+                            </div>
+                            <div class="upgrade-copy">
+                                <h3>全身按摩 90 分鐘</h3>
+                                <p>把單次放鬆拉長成更穩定的身體保養節奏，讓舒緩感停留更久，也更適合想固定照顧自己的妳。</p>
+                                <div class="upgrade-pills">
+                                    <span>更深層放鬆</span>
+                                    <span>更長效舒緩</span>
+                                    <span>規律保養首選</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="upgrade-secondary-card">
+                        <div>
+                            <span class="upgrade-tag upgrade-tag-secondary">10 堂升級</span>
+                            <h3>全身按摩 90 分鐘</h3>
+                            <p>加贈 <i class="fa-solid fa-gift" style="color: var(--accent-gold);"></i> 營養品旅行組，放鬆身心也把保養一起帶走。</p>
+                        </div>
+                        <div class="upgrade-value-box">
+                            <span>好禮價值</span>
+                            <strong>$680</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="promo-cta-box" style="text-align: center; margin-top: 42px; padding: 28px; background: rgba(197,160,101,0.08); border-radius: 18px;">
+                    <p class="font-handwriting" style="font-size: 1.1rem; color: #666; line-height: 1.9;">
+                        妳總是把最好的留給家人，<br>這個母親節，請記得也留一點美好給自己。♡
+                    </p>
+                    <div style="margin-top: 20px;">
+                        <a href="https://line.me/ti/p/WO0sI-UWeV" class="btn btn-gold" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-line" style="margin-right: 6px;"></i> 立即預約・名額有限
+                        </a>
+                    </div>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -95,11 +168,11 @@
                     <i class="fa-solid fa-quote-left"></i>
                 </div>
                 
-                <h2 class="text-purple" style="margin-bottom: 20px;">以十年初心，守護您的孕期時光</h2>
+                <h2 class="text-purple font-handwriting" style="margin-bottom: 20px;">以十年初心，守護您的孕期時光</h2>
                 
                 <div style="text-align: left; line-height: 2; color: #555; font-size: 1.05rem;">
                     <p style="margin-bottom: 20px;">
-                        嗨，我是 <strong style="color:var(--dark-purple);">Mina</strong>，亞莉孕婦按摩 SPA 的創辦人。
+                        嗨，我是 <strong class="font-handwriting" style="color:var(--dark-purple); font-size:1.2em;">Mina</strong>，亞莉孕婦按摩 SPA 的創辦人。
                     </p>
                     <p style="margin-bottom: 20px;">
                         在孕婦按摩領域耕耘已超過 10 年，這些年來我不斷精進，只為了更深入貼近每一位準媽咪的身心需求。
@@ -113,7 +186,7 @@
                 </div>
 
                 <div style="margin-top: 10px; text-align: right;">
-                    <p style="font-family: 'Noto Serif TC', serif; font-size: 1.2rem; color: var(--accent-gold); font-weight: bold;">Mina</p>
+                    <p class="font-handwriting" style="font-size: 1.5rem; color: var(--accent-gold); font-weight: bold;">Mina</p>
                     <p style="font-size: 0.8rem; color: #999; letter-spacing: 1px;">FOUNDER of ALI SPA</p>
                 </div>
 
@@ -131,11 +204,11 @@
         <div class="container">
             <div class="service-row">
                 <div class="service-img">
-                    <img src="https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=1000&auto=format&fit=crop" alt="孕婦按摩">
+                    <img src="img/Spa4.png" alt="孕婦按摩">
                 </div>
                 
                 <div class="service-text">
-                    <h3 style="margin-bottom: 30px; border-bottom: 2px solid var(--accent-gold); display: inline-block; padding-bottom: 10px;">孕婦按摩 & 泌乳護理</h3>
+                    <h3 class="font-taipei-sans" style="margin-bottom: 30px; border-bottom: 2px solid var(--accent-gold); display: inline-block; padding-bottom: 10px;">孕婦按摩 & 泌乳護理</h3>
                     
                     <div style="margin-bottom: 25px;">
                         <h4 style="color:var(--dark-purple); font-size:1.2rem; margin-bottom:8px;">
@@ -155,7 +228,7 @@
                         </p>
                     </div>
 
-                    <a href="https://line.me/R/ti/p/@YourLineID?text=我想預約孕婦按摩" class="btn btn-outline">預約按摩時段</a>
+                    <a href="https://line.me/ti/p/WO0sI-UWeV" class="btn btn-outline">預約按摩時段</a>
                 </div>
             </div>
         </div>
@@ -164,10 +237,10 @@
     <section id="beauty" class="section-padding" style="background-color: #f3f0f7;">
         <div class="container">
             <div class="text-center section-header">
-                <h2 class="text-purple">高訂美顏・極致護理</h2>
+                <h2 class="text-purple font-taipei-sans">美容護膚・極致修護</h2>
                 <p class="text-muted" style="font-size: 1.05rem; margin-top: 15px;">
-                    以<strong>「孕婦安規」</strong>的最高標準，呵護每一位追求完美的妳。<br>
-                    無論是孕期保養或日常急救，皆能享受最純淨的科技煥膚。
+                    以<strong>「敏弱肌 / 孕媽咪可安心使用」</strong>的規格設計每一項療程。<br>
+                    不論妳是忙碌上班族、準媽咪，或只是想好好寵愛自己，都能在這裡找到適合的美容護膚方案。
                 </p>
             </div>
 
@@ -188,51 +261,64 @@
             </div>
             
             <div class="card-grid col-3">
-                <div class="service-card">
-                    <div class="card-icon">🌊</div>
-                    <h4 class="serif">水飛秀淨化護理</h4>
+                <div class="premium-service-card">
+                    <div class="premium-image-wrapper">
+                        <img src="img/水飛秀淨化護理_2.png" alt="水飛秀淨化護理">
+                    </div>
+                    <h4 class="serif service-title"><span class="title-emoji">🌊</span>水飛秀淨化護理</h4>
                     <p class="desc">如同「毛孔吸塵器」般的基礎保濕療程。透過深海海藻的「負壓吸引」吸附髒污、油脂和粉刺，並進行功能導入。溫和清潔毛孔，使膚質細緻透亮。</p>
                     <div class="tags">
                         <span>#油性肌推薦</span><span>#毛孔粗大</span><span>#粉刺清潔</span>
                     </div>
                 </div>
-                <div class="service-card">
-                    <div class="card-icon">✨</div>
-                    <h4 class="serif">微晶導入護理</h4>
+                <div class="premium-service-card">
+                    <div class="premium-image-wrapper">
+                        <img src="img/微晶導入護理_2.png" alt="微晶導入護理">
+                    </div>
+                    <h4 class="serif service-title"><span class="title-emoji">✨</span>微晶導入護理</h4>
                     <p class="desc">高度客製化的調理療程。針對一般、乾性或混合肌膚調整精華。特別適合「外油內乾」的膚質，做完當下皮膚立即提亮，非常有感！</p>
                     <div class="tags">
                         <span>#客製化調理</span><span>#改善外油內乾</span><span>#約會前急救</span>
                     </div>
                 </div>
-                <div class="service-card">
-                    <div class="card-icon">💎</div>
-                    <h4 class="serif">白鑽燈泡肌</h4>
+                <div class="premium-service-card">
+                    <div class="premium-image-wrapper">
+                        <img src="img/白鑽燈泡肌_2.png" alt="白鑽燈泡肌">
+                    </div>
+                    <h4 class="serif service-title"><span class="title-emoji">💎</span>白鑽燈泡肌</h4>
                     <p class="desc">利用新型胜肽酸與杏仁酸的小分子特性，溫和滲透。能減緩細紋、改善暗沉，打造如燈泡般自帶光圈的透亮感。</p>
                     <div class="tags">
                         <span>#婚前/孕期保養</span><span>#改善暗沉</span><span>#代謝色素</span>
                     </div>
                 </div>
-                <div class="service-card">
-                    <div class="card-icon">💧</div>
-                    <h4 class="serif">α-GA1 液態飛梭</h4>
+                <div class="premium-service-card">
+                    <div class="premium-image-wrapper">
+                        <img src="img/α-GA1液態飛梭_2.jpg" alt="α-GA1 液態飛梭">
+                    </div>
+                    <h4 class="serif service-title"><span class="title-emoji">💧</span>α-GA1 液態飛梭</h4>
                     <p class="desc">敏弱肌也能做的肌膚重建。主成分為輔酶酵素，非酸類。針對長痘無法改善、油性或敏感肌膚，讓皮膚變細緻且不會變薄。</p>
                     <div class="tags">
                         <span>#敏感肌友善</span><span>#痘痘調理</span><span>#肌膚重建</span>
                     </div>
                 </div>
-                <div class="service-card">
-                    <div class="card-icon">⚡</div>
-                    <h4 class="serif">極致超胜刀</h4>
+                <div class="premium-service-card">
+                    <div class="premium-image-wrapper">
+                        <img src="img/極致超胜刀_2.png" alt="極致超胜刀">
+                    </div>
+                    <h4 class="serif service-title"><span class="title-emoji">⚡</span>極致超胜刀</h4>
                     <p class="desc">抗老緊緻首選。含有高濃度的三胜肽至六胜肽，透過導入讓肌膚深層吸收。有效延緩鬆弛、改善老化，修護彈性。</p>
                     <div class="tags">
                         <span>#緊緻抗皺</span><span>#撫平細紋</span><span>#輪廓線管理</span>
                     </div>
                 </div>
-                <div class="service-card cta-card">
-                    <div>
-                        <h4 class="serif" style="color: white; border:none;">不知道怎麼選？</h4>
-                        <p style="color: rgba(255,255,255,0.9); margin: 15px 0;">無論您是孕期或一般保養，<br>歡迎傳送素顏照，線上免費評估。</p>
-                        <a href="https://line.me/R/ti/p/@YourLineID" class="btn btn-gold" style="background: white; color: var(--accent-gold); border: none;">私訊諮詢膚況</a>
+                <div class="premium-service-card">
+                    <div class="premium-image-wrapper">
+                        <img src="img/森太系護敏_2.png" alt="森太系護敏">
+                    </div>
+                    <h4 class="serif service-title"><span class="title-emoji">🌿</span>森太系護敏</h4>
+                    <p class="desc">針對敏感肌膚的調理療程，採用專屬的胜肽膜科技，能有效的修護受損屏障，抑制過度敏弱反應，讓您的肌膚回到健康狀態。</p>
+                    <div class="tags">
+                        <span>#敏弱肌膚</span><span>#修護屏障</span><span>#穩定膚況</span>
                     </div>
                 </div>
             </div>
@@ -242,101 +328,108 @@
     <section id="spa" class="section-padding" style="background-color: #fdfbf7;">
         <div class="container">
             <div class="text-center section-header">
-                <h2 class="text-purple">身心靈 SPA 療癒</h2>
+                <h2 class="text-purple font-taipei-sans">身心靈 SPA 療癒</h2>
                 <p class="text-muted">
                     釋放深層壓力，啟動身體自我修復力。<br>
                     從純手技放鬆、能量儀器調理，到極致美胸養護。
                 </p>
             </div>
 
-            <div class="card-grid col-2">
-                
-                <div class="service-card image-mode">
-                    <div class="card-img-top">
-                        <img src="img/Spa1.png" alt="全身紓壓手技">
-                        <div class="img-overlay"></div>
+            <div class="spa-editorial-container">
+
+                <article class="spa-editorial-row">
+                    <div class="spa-image-col">
+                        <div class="spa-image-wrapper">
+                            <img src="img/Spa_1.png" alt="全身紓壓手技">
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <h4 class="serif">全身紓壓 SPA</h4>
-                        <p class="desc">是一種幫助放鬆身心的療程，透過全身按摩來釋放壓力，緩解肌肉緊張與疲勞。
-                            療程中透過專業的按摩手法，搭配芳香精油，讓身體得到深層放鬆，提升血液循環 ，幫助舒緩不適，讓人重拾活力。</p>
-                        <div class="tags">
+                    <div class="spa-text-col">
+                        <span class="spa-num">01 — RELAX</span>
+                        <h3 class="spa-title serif">全身紓壓 SPA</h3>
+                        <p class="spa-desc">是一種幫助放鬆身心的療程，透過全身按摩來釋放壓力，緩解肌肉緊張與疲勞。療程中透過專業的按摩手法，搭配芳香精油，讓身體得到深層放鬆，提升血液循環，幫助舒緩不適，讓人重拾活力。</p>
+                        <div class="spa-tags">
                             <span>#全身緊繃</span><span>#肩頸痠痛</span><span>#多特瑞精油</span>
                         </div>
                     </div>
-                </div>
+                </article>
 
-                <div class="service-card image-mode">
-                    <div class="card-img-top">
-                        <img src="img/Spa3.png" alt="能量鬆筋環境" class="spa3-img">
-                        <div class="img-overlay"></div>
+                <article class="spa-editorial-row">
+                    <div class="spa-image-col">
+                        <div class="spa-image-wrapper">
+                            <div class="safe-badge serif">無痛・無電流感</div>
+                            <img src="img/Spa_3.png" alt="能量鬆筋環境" style="object-position: right top;">
+                        </div>
                     </div>
-                    <div class="safe-badge">❤️ 無痛・無電流感</div>
-                    <div class="card-body">
-                        <h4 class="serif">能量鬆筋 SPA</h4>
-                        <p class="desc">利用 70KHz 高週波同頻震盪儀器，使皮下組織加溫 2°C，促進代謝並平衡酸性體質。比純手技更深層！
-                            從背部開始，透過針對穴位的按摩來疏通經絡，幫助放鬆背部和手臂的緊繃肌肉。這個過程不僅能舒緩肌肉緊張，還能促進血液循環，釋放身體的壓力與滯留能量，讓整個身體感覺更加輕鬆和舒適。
-                        </p>
-                        <div class="tags">
+                    <div class="spa-text-col">
+                        <span class="spa-num">02 — RESTORE</span>
+                        <h3 class="spa-title serif">能量鬆筋 SPA</h3>
+                        <p class="spa-desc">利用 70KHz 高週波同頻震盪儀器，使皮下組織加溫 2°C，比純手技更深層！從背部開始，透過針對穴位的按摩疏通經絡，不僅舒緩肌肉緊張，還能釋放身體壓力與滯留能量，讓整個身體感覺更加輕鬆。</p>
+                        <div class="spa-tags">
                             <span>#怕痛首選</span><span>#改善睡眠</span><span>#調整體質</span>
                         </div>
                     </div>
-                </div>
+                </article>
 
-                <div class="service-card image-mode">
-                    <div class="card-img-top">
-                        <img src="img/Spa2.png" alt="能量熱石氛圍">
-                        <div class="img-overlay"></div>
+                <article class="spa-editorial-row">
+                    <div class="spa-image-col">
+                        <div class="spa-image-wrapper">
+                            <img src="img/Spa_2.png" alt="能量熱石氛圍">
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <h4 class="serif">能量熱石 SPA</h4>
-                        <p class="desc">用加熱過的溫熱石頭來按摩，就像有人用暖暖包幫你按摩一樣。熱石頭的溫暖會慢慢滲透到身體裡，讓緊繃的肌肉放鬆下來，身體變得更舒服。做完後你會感覺全身暖暖的，疲勞和壓力都消失了，整個人重新充滿活力。</p>
-                        <div class="tags">
+                    <div class="spa-text-col">
+                        <span class="spa-num">03 — WARMTH</span>
+                        <h3 class="spa-title serif">能量熱石 SPA</h3>
+                        <p class="spa-desc">用加熱過的溫熱石頭來按摩，就像有人用暖暖包幫你按摩一樣。熱石頭的溫暖會慢慢滲透到身體裡，讓緊繃的肌肉放鬆下來。做完後會感覺全身暖暖的，疲勞和壓力都消失了，整個人重新充滿活力。</p>
+                        <div class="spa-tags">
                             <span>#深層鬆筋</span><span>#改善手腳冰冷</span><span>#去濕氣</span>
                         </div>
                     </div>
-                </div>
+                </article>
 
-                <div class="service-card feature-mode">
-                    <div class="safe-badge">✨ 人氣推薦 ✨</div>
-                    <div class="feature-content">
-                        <div class="card-icon" style="color: white; margin-bottom: 15px;"><i class="fa-solid fa-venus"></i></div>
-                        <h4 class="serif" style="color: white; border-bottom-color: rgba(255,255,255,0.3);">隱形馬甲育胸術</h4>
-                        <p class="desc" style="color: rgba(255,255,255,0.95);">
-                            引進 V-22 智慧律動儀，結合 5 大模式與深層手技。
-                        針對不同年齡層（青春期發育、產後萎縮、更年期保健）提供專屬護理。
-                        有效改善<strong>胸悶、外擴、下垂</strong>，讓胸部恢復飽滿立體、彈性緊實。
+                <article class="spa-editorial-row spa-vip-only">
+                    <div class="spa-text-col spa-vip-text-col spa-vip-fullwidth">
+                        <div class="vip-badge serif">✨ 人氣推薦</div>
+                        <p class="spa-vip-slogan">讓胸型回到應有的位置</p>
+                        <span class="spa-num">04 — FIRMING</span>
+                        <h3 class="spa-title serif"><i class="fa-solid fa-venus" style="color: var(--accent-gold); margin-right: 10px;"></i>隱形馬甲育胸術</h3>
+                        <p class="spa-desc">
+                            隱形馬甲育胸術是為了溫柔照顧胸型而設計的療程，結合專利負壓高頻震動與深層手技，幫助放鬆胸部周圍緊繃的組織、帶動循環，讓線條慢慢回到集中、挺立、舒服的狀態。<br><br>
+                            會依照青春期發育、產後調理到更年期保健等不同階段，客製調整律動模式與強度，在沒有壓迫感、也不需要硬式馬甲的前提下，陪妳溫柔修護胸部彈性。
                         </p>
-                        <div class="tags">
-                            <span style="background:rgba(255,255,255,0.2); color:white;">#集中托高</span>
-                            <span style="background:rgba(255,255,255,0.2); color:white;">#產後美胸</span>
-                            <span style="background:rgba(255,255,255,0.2); color:white;">#對抗地心引力</span>
+                        <div class="spa-vip-checks">
+                            <span><i class="fa-solid fa-check"></i> 無壓迫、無硬式馬甲</span>
+                            <span><i class="fa-solid fa-check"></i> 集中托高、改善外擴</span>
+                            <span><i class="fa-solid fa-check"></i> 依階段客製律動模式</span>
+                        </div>
+                        <div class="spa-tags" style="margin-top: 20px;">
+                            <span>#V22智慧律動儀</span>
+                            <span>#溫和律動不壓迫</span>
+                            <span>#青春期發育調整</span>
+                            <span>#產後胸型回彈</span>
+                            <span>#預防外擴下垂</span>
                         </div>
                     </div>
-                </div>
+                </article>
 
             </div>
 
             <div class="text-center" style="margin-top: 50px;">
-                <a href="https://line.me/R/ti/p/@YourLineID" class="btn btn-outline">預約放鬆時段</a>
+                <a href="https://line.me/ti/p/WO0sI-UWeV" class="btn btn-outline">預約放鬆時段</a>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="section-padding bg-watermark" style="position: relative; overflow: hidden;">
+    <section id="contact" class="section-padding bg-immersive-purple bg-watermark">
         
-        <div class="container" style="position: relative; z-index: 1;">
+        <div class="container">
             
-            <div class="text-center section-header" style="margin-bottom: 60px;">
-                <h2 class="text-purple" style="letter-spacing: 2px;">CONTACT US</h2>
-                <h3 class="serif" style="color: var(--text-charcoal); margin-top: 10px; font-size: 1.5rem;">亞莉孕婦 SPA</h3>
-                <p class="text-muted">
-                    專屬妳的私密療癒空間，Mina 已準備好迎接妳。
-                </p>
-                <div style="width: 40px; height: 2px; background: var(--accent-gold); margin: 20px auto;"></div>
+            <div class="text-center section-header">
+                <h2 class="contact-title">CONTACT US</h2>
+                <h3 class="font-thenkhung contact-subtitle">亞莉孕婦 SPA</h3>
+                <div class="contact-divider"></div>
             </div>
 
-            <div class="contact-editorial-list">
+            <div class="contact-editorial-list on-dark-bg">
                 
                 <div class="editorial-item">
                     <div class="item-label">
@@ -344,7 +437,7 @@
                         <span class="zh-title">營業時間</span>
                     </div>
                     <div class="item-content">
-                        週一至週日 <span class="highlight">09:00 - 17:00</span>
+                        週一至週日 <span class="highlight-gold">09:00 - 17:00</span>
                     </div>
                 </div>
 
@@ -355,9 +448,9 @@
                     </div>
                     <div class="item-content">
                         高雄市三民區大裕路202巷1號3樓
-                        <span class="note">(三宅寵物坊樓上)</span>
+                        <span class="note-light">(三宅寵物坊樓上)</span>
                         <br>
-                        <a href="https://goo.gl/maps/YourMapLink" target="_blank" class="text-link" rel="noopener noreferrer">
+                        <a href="https://goo.gl/maps/YourMapLink" target="_blank" class="text-link-gold">
                             開啟 Google 地圖導航
                         </a>
                     </div>
@@ -369,7 +462,7 @@
                         <span class="zh-title">預約電話</span>
                     </div>
                     <div class="item-content">
-                        <a href="tel:0955434345" class="phone-num">0955-434-345</a>
+                        <a href="tel:0955434345" class="phone-num-gold">0955-434-345</a>
                     </div>
                 </div>
 
@@ -397,7 +490,7 @@
                         <div class="step-item">Step 3. 傳送電子卡片</div>
                     </div>
 
-                    <a href="https://line.me/R/ti/p/@YourLineID?text=我想購買禮物卡" class="btn btn-gold" style="background:white; color:var(--primary-purple); border:none;">挑選禮物方案</a>
+                    <a href="https://line.me/ti/p/WO0sI-UWeV" class="btn btn-gold" style="background:white; color:var(--primary-purple); border:none;">挑選禮物方案</a>
                 </div>
             </div>
         </div>
@@ -408,13 +501,13 @@
         <div class="container text-center">
             
             <div style="margin-bottom: 20px;">
-                <a href="https://www.facebook.com/826790877428220" target="_blank" rel="noopener noreferrer" style="color: #ccc; margin: 0 10px; font-size: 1.2rem; transition: 0.3s;" onmouseover="this.style.color='var(--accent-gold)'" onmouseout="this.style.color='#ccc'">
+                <a href="https://www.facebook.com/qjb8213h?locale=zh_TW" target="_blank" rel="noopener noreferrer" style="color: #ccc; margin: 0 10px; font-size: 1.2rem; transition: 0.3s;" onmouseover="this.style.color='var(--accent-gold)'" onmouseout="this.style.color='#ccc'">
                     <i class="fa-brands fa-facebook-f"></i>
                 </a>
-                <a href="https://www.instagram.com/minas50114?igsh=Z3IyNHRodDE3aGc5" target="_blank" rel="noopener noreferrer" style="color: #ccc; margin: 0 10px; font-size: 1.2rem; transition: 0.3s;" onmouseover="this.style.color='var(--accent-gold)'" onmouseout="this.style.color='#ccc'">
+                <a href="https://www.instagram.com/minas50114/" target="_blank" rel="noopener noreferrer" style="color: #ccc; margin: 0 10px; font-size: 1.2rem; transition: 0.3s;" onmouseover="this.style.color='var(--accent-gold)'" onmouseout="this.style.color='#ccc'">
                     <i class="fa-brands fa-instagram"></i>
                 </a>
-                <a href="https://lin.ee/udG7vpR" target="_blank" rel="noopener noreferrer" style="color: #ccc; margin: 0 10px; font-size: 1.2rem; transition: 0.3s;" onmouseover="this.style.color='var(--accent-gold)'" onmouseout="this.style.color='#ccc'">
+                <a href="https://line.me/ti/p/WO0sI-UWeV" target="_blank" rel="noopener noreferrer" style="color: #ccc; margin: 0 10px; font-size: 1.2rem; transition: 0.3s;" onmouseover="this.style.color='var(--accent-gold)'" onmouseout="this.style.color='#ccc'">
                     <i class="fa-brands fa-line"></i>
                 </a>
             </div>
@@ -430,7 +523,7 @@
         <a href="tel:0955434345" style="width: 20%; text-align: center; color: var(--primary-purple);">
             <i class="fa-solid fa-phone" style="font-size: 1.5rem;"></i>
         </a>
-        <a href="https://lin.ee/udG7vpR" class="btn-sticky-line" target="_blank" rel="noopener noreferrer">
+        <a href="https://line.me/ti/p/WO0sI-UWeV" class="btn-sticky-line" target="_blank" rel="noopener noreferrer">
             <i class="fa-brands fa-line"></i> LINE 線上預約
         </a>
     </div>
