@@ -219,7 +219,7 @@ header {
 .hero {
     height: 90vh;
     position: relative;
-    background: url('../img/home.png') center/cover no-repeat;
+    background: url('../img/home.jpg') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -940,7 +940,7 @@ header {
 .bg-immersive-purple {
     /* 使用 Logo 作為滿版背景，搭配品牌紫色疊層 */
     background-color: #8D82B3;
-    background-image: url('../img/Logo.png');
+    background-image: url('../img/Logo.jpg');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
